@@ -230,12 +230,6 @@ export const socials = [
   { label: "YouTube", href: "https://youtube.com", icon: "youtube" as const },
 ];
 
-export const headerSocials = [
-  socials[0],
-  socials[2],
-  socials[1],
-];
-
 export const projectCategories: { id: ProjectCategory; label: string }[] = [
   { id: "residential", label: "Residential Projects" },
   { id: "commercial", label: "Commercial Projects" },

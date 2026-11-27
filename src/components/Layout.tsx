@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import {
   footerServices,
-  headerSocials,
   quickLinks,
   services,
   site,
@@ -72,31 +71,6 @@ export function Layout() {
       <a className="skip" href="#main">
         Skip to content
       </a>
-      <div className="topbar">
-        <div className="wrap topbar-inner">
-          <p>
-            <span>
-              Call Us: <a href={site.phoneHref}>{site.phone}</a>
-            </span>
-            <span className="topbar-sep"> | </span>
-            <span>
-              WhatsApp Us:{" "}
-              <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">
-                {site.whatsapp}
-              </a>
-            </span>
-          </p>
-          <ul className="social-row" aria-label="Social links">
-            {headerSocials.map((item) => (
-              <li key={item.label}>
-                <a href={item.href} target="_blank" rel="noreferrer" aria-label={item.label}>
-                  <Icon name={item.icon} size={14} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
       <header className="site-header">
         <div className="wrap header-inner">
           <Brand variant="color" onActivate={() => setOpen(false)} />
