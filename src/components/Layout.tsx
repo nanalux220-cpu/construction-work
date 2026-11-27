@@ -62,12 +62,16 @@ export function Layout() {
       <div className="topbar">
         <div className="wrap topbar-inner">
           <p>
-            Call Us: <a href={site.phoneHref}>{site.phone}</a>
+            <span>
+              Call Us: <a href={site.phoneHref}>{site.phone}</a>
+            </span>
             <span className="topbar-sep"> | </span>
-            WhatsApp Us:{" "}
-            <a href={site.whatsappHref} target="_blank" rel="noreferrer">
-              {site.whatsapp}
-            </a>
+            <span>
+              WhatsApp Us:{" "}
+              <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer">
+                {site.whatsapp}
+              </a>
+            </span>
           </p>
           <ul className="social-row" aria-label="Social links">
             {headerSocials.map((item) => (
@@ -220,7 +224,7 @@ export function Layout() {
           <div className="wrap">
             <p>
               © {year} {site.name} | Designed by{" "}
-              <a href={site.designer.href} target="_blank" rel="noreferrer">
+              <a href={site.designer.href} target="_blank" rel="noopener noreferrer">
                 {site.designer.name}
               </a>
             </p>

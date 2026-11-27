@@ -74,7 +74,7 @@ export const site = {
     "Whether it’s a question, an update, or a site visit, our team is available Monday to Friday, 8:00 AM – 6:00 PM.",
   footerBlurb:
     "Foundation of the building will be solidify if you choose the right path. For all your Building works come to FRANSARE40 ENGINEERING & CONSTRUCTION WORKS and let's get it done.",
-  designer: { name: "Kaetech Digital", href: "http://kaetechdigital.com" },
+  designer: { name: "Dleading Creative Design Ltd", href: "https://www.creativedleading.co.uk/" },
 };
 
 export const heroSlides = [
