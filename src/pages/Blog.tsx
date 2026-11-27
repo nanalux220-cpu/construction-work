@@ -99,7 +99,7 @@ export function Blog() {
                     </Link>
                     <div>
                       <p className="kicker">
-                        {post.category} · {post.displayDate}
+                        {post.category} · <span className="card-meta">{post.displayDate}</span>
                       </p>
                       <h2>
                         <Link to={`/blog/${post.slug}`}>{post.title}</Link>
