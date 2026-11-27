@@ -23,10 +23,7 @@ const nav = [
 function Brand({ variant }: { variant: "color" | "white" }) {
   return (
     <Link to="/" className={`brand brand-${variant}`} aria-label={site.name}>
-      <img
-        src={variant === "white" ? "/images/logo-white.png" : "/images/archline-logo.png"}
-        alt={site.name}
-      />
+      <img src="/images/fransare-logo.png" alt={site.name} />
     </Link>
   );
 }

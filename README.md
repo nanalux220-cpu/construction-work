@@ -2,7 +2,7 @@
 
 A standalone website for **FRANSARE 40 ENGINEERING & CONSTRUCTION WORKS** in Kumasi, Ghana. The pages follow the ArchLine construction theme (layout, colours, type, and section order) and do not use WordPress.
 
-Verified business details from the Google Business Profile are used for the name, Kumasi address, phone, hours, about text, and the services the business offers. The theme logo, email address, social links, project stories, testimonials, blog articles, statistics, and sustainability block are still the theme placeholders, ready to be replaced later.
+Verified business details from the Google Business Profile are used for the name, Kumasi address, phone, hours, about text, services, and logo. The email address, social links, project stories, testimonials, blog articles, statistics, and sustainability block are still the theme placeholders, ready to be replaced later.
 
 ## Requirements
 
