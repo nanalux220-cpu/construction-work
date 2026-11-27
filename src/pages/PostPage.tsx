@@ -21,7 +21,7 @@ export function PostPage() {
   return (
     <>
       <PageHero title={post.title} eyebrow={post.category} image={post.image}>
-        <p className="hero-summary">{post.displayDate}</p>
+        <p className="hero-summary card-meta">{post.displayDate}</p>
       </PageHero>
       <section className="section">
         <div className="wrap with-sidebar">

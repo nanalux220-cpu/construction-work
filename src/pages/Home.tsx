@@ -4,8 +4,9 @@ import { Icon } from "../components/Icons";
 import { RichTitle } from "../components/Prose";
 import { ServicesCarousel } from "../components/ServicesCarousel";
 import { BlogCarousel } from "../components/BlogCarousel";
+import { ProjectsCarousel } from "../components/ProjectsCarousel";
 import { TestimonialsCarousel } from "../components/TestimonialsCarousel";
-import { CtaBand, SectionHeading, StatFigure, TextLink, usePageTitle } from "../components/common";
+import { CtaBand, SectionHeading, StatFigure, usePageTitle } from "../components/common";
 import {
   heroSlides,
   posts,
@@ -37,6 +38,7 @@ export function Home() {
   const orderedServices = homeServiceOrder
     .map((slug) => services.find((service) => service.slug === slug))
     .filter((service) => service !== undefined);
+  const showcaseItems = showcaseRows.flat();
 
   return (
     <>
@@ -179,32 +181,7 @@ export function Home() {
             title="Innovative Projects Showcase"
             text="Explore our most innovative architectural and construction achievements"
           />
-          <div className="showcase">
-            {showcaseRows.map((row, rowIndex) => (
-              <div className={`showcase-row ${rowIndex === 1 ? "is-reverse" : ""}`} key={row[0].image}>
-                {row.map((item) =>
-                  item.kind === "feature" ? (
-                    <article key={item.image + item.to} className="feature-card" style={{ backgroundImage: `url(${item.image})` }}>
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.text}</p>
-                        <TextLink to={item.to}>Explore</TextLink>
-                      </div>
-                    </article>
-                  ) : (
-                    <article key={item.image + item.to} className="media-card">
-                      <img src={item.image} alt="" />
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.text}</p>
-                        <TextLink to={item.to}>Explore</TextLink>
-                      </div>
-                    </article>
-                  ),
-                )}
-              </div>
-            ))}
-          </div>
+          <ProjectsCarousel items={showcaseItems} />
         </div>
       </section>
 
