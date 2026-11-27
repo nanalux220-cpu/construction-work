@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { Icon } from "../components/Icons";
 import { RichTitle } from "../components/Prose";
 import { ServicesCarousel } from "../components/ServicesCarousel";
-import { CtaBand, SectionHeading, Stars, StatFigure, TextLink, usePageTitle } from "../components/common";
+import { BlogCarousel } from "../components/BlogCarousel";
+import { TestimonialsCarousel } from "../components/TestimonialsCarousel";
+import { CtaBand, SectionHeading, StatFigure, TextLink, usePageTitle } from "../components/common";
 import {
   heroSlides,
   posts,
@@ -249,21 +251,7 @@ export function Home() {
             title="What Our Clients Say"
             text="Hear from businesses and individuals who have experienced our exceptional service"
           />
-          <div className="card-grid cols-3">
-            {testimonials.map((item) => (
-              <article className="quote-card" key={item.name}>
-                <Stars />
-                <p>“{item.quote}”</p>
-                <footer>
-                  <img src={item.photo} alt="" />
-                  <div>
-                    <strong>{item.name}</strong>
-                    <span>{item.role}</span>
-                  </div>
-                </footer>
-              </article>
-            ))}
-          </div>
+          <TestimonialsCarousel items={testimonials} />
         </div>
       </section>
 
@@ -274,22 +262,7 @@ export function Home() {
             title="Innovative Projects Showcase"
             text="Explore our most innovative architectural and construction achievements"
           />
-          <div className="card-grid cols-3">
-            {posts.map((post) => (
-              <article className="media-card blog-card" key={post.slug}>
-                <Link to={`/blog/${post.slug}`}>
-                  <img src={post.image} alt="" />
-                </Link>
-                <div>
-                  <p className="kicker">{post.category}</p>
-                  <h3>
-                    <Link to={`/blog/${post.slug}`}>{post.title}</Link>
-                  </h3>
-                  <TextLink to={`/blog/${post.slug}`}>Learn more</TextLink>
-                </div>
-              </article>
-            ))}
-          </div>
+          <BlogCarousel posts={posts} />
         </div>
       </section>
 
