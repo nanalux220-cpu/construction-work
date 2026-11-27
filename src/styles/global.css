@@ -122,7 +122,7 @@ p { margin: 0 0 1em; }
   border-radius: 2px;
 }
 .brand-white img { height: 46px; width: auto; }
-.desktop-nav { display: flex; justify-content: center; align-items: center; gap: 6px; }
+.desktop-nav { display: flex; justify-content: flex-end; align-items: center; gap: 4px; }
 .nav-link, .desktop-nav > a {
   display: inline-flex; align-items: center; gap: 4px; text-decoration: none;
   font-family: var(--display); font-weight: 500; font-size: 14px; letter-spacing: 0.06em;
