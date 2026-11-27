@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "../components/Icons";
 import { RichTitle } from "../components/Prose";
+import { ServicesCarousel } from "../components/ServicesCarousel";
 import { CtaBand, SectionHeading, Stars, StatFigure, TextLink, usePageTitle } from "../components/common";
 import {
   heroSlides,
@@ -37,7 +38,7 @@ export function Home() {
 
   return (
     <>
-      <section className="home-hero" aria-label="Intro">
+      <section className="home-hero" id="hero" aria-label="Intro">
         <div className="hero-slides">
           {heroSlides.map((src, index) => (
             <img key={src} src={src} alt="" className={index === slide ? "is-active" : ""} />
@@ -213,18 +214,7 @@ export function Home() {
             text="Explore our most innovative architectural and construction achievements"
             tone="light"
           />
-          <div className="card-grid cols-4">
-            {orderedServices.map((service) => (
-              <article className="media-card" key={service.slug}>
-                <img src={service.image} alt="" />
-                <div>
-                  <h3>{service.homeTitle}</h3>
-                  <p>{service.homeSummary}</p>
-                  <TextLink to={`/services/${service.slug}`}>Learn More</TextLink>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ServicesCarousel services={orderedServices} />
         </div>
       </section>
 

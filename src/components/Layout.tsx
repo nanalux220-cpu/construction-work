@@ -20,9 +20,22 @@ const nav = [
   { to: "/contact", label: "Contact", end: false },
 ];
 
-function Brand({ variant }: { variant: "color" | "white" }) {
+function Brand({ variant, onActivate }: { variant: "color" | "white"; onActivate: () => void }) {
+  const { pathname } = useLocation();
   return (
-    <Link to="/" className={`brand brand-${variant}`} aria-label={site.name}>
+    <Link
+      to="/"
+      className={`brand brand-${variant}`}
+      aria-label={site.name}
+      onClick={(event) => {
+        onActivate();
+        if (pathname === "/") {
+          event.preventDefault();
+          const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+        }
+      }}
+    >
       <img src="/images/fransare-logo.png" alt={site.name} />
     </Link>
   );
@@ -86,7 +99,7 @@ export function Layout() {
       </div>
       <header className="site-header">
         <div className="wrap header-inner">
-          <Brand variant="color" />
+          <Brand variant="color" onActivate={() => setOpen(false)} />
           <nav className="desktop-nav" aria-label="Primary">
             {nav.map((item) =>
               item.children ? (
@@ -137,7 +150,7 @@ export function Layout() {
       </header>
       <div className={`mobile-nav ${open ? "is-open" : ""}`} id="mobile-nav" hidden={!open}>
         <div className="mobile-nav-panel">
-          <Brand variant="color" />
+          <Brand variant="color" onActivate={() => setOpen(false)} />
           <nav aria-label="Mobile">
             {nav.map((item) =>
               item.children ? (
@@ -184,7 +197,7 @@ export function Layout() {
       <footer className="site-footer">
         <div className="wrap footer-grid">
           <div>
-            <Brand variant="white" />
+            <Brand variant="white" onActivate={() => setOpen(false)} />
             <p>{site.footerBlurb}</p>
           </div>
           <div>
